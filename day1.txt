@@ -1,0 +1,21 @@
+Kubernetes Introduction:
+	1. Recap Containers
+	2. Container Orchestration
+	3. Kubernetes Architecture
+
+Kubernetes Setup:
+	1. lets understand Minikube
+	2. setup minikube
+	3. lets understand kubeadm
+	4. setup multinode k8s cluster
+
+Kubernetes Basics:
+	1. PODs
+	2. ReplicaSet
+	3. Deployments
+
+Kubernetes Services:
+	1. Nodeport
+	2. ClusterIP
+	3. LoadBalancer
+

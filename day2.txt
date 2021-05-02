@@ -1,0 +1,22 @@
+Deployment Advance:
+	1. Rolling update
+	2. Rollback
+	3. lets understand blue-green deployments
+
+Networking & Service Discovery:
+	1. Networking Overview
+	2. Namespace
+	3. service discovery
+
+Kubernetes Persistence & Volume:
+	1. Volume Mounts
+	2. Volumes
+	3. PersitenceVolumeClaims
+	4. Storage Class & Binding
+
+Logging and Monitoring:
+        1. How to Monitor Cluster Components
+        2. Manage the Application Logs
+
+
+

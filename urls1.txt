@@ -1,0 +1,2 @@
+https://www.john-cd.com/cheatsheets/Containers/Minikube_Install_on_Windows/#install-minikube-on-windows
+https://kubernetes.io/docs/tasks/tools/
