@@ -11,7 +11,7 @@ Kubernetes Setup:
 
 Kubernetes Basics:
 	1. PODs
-	2. ReplicaSet
+	2. ReplicationController/ReplicaSet
 	3. Deployments
 
 Kubernetes Services:

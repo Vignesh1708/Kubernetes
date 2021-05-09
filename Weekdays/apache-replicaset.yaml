@@ -4,24 +4,28 @@ metadata:
   name: apache-rs
   labels:
     app: apache
-    env: prod
-    tier: frontend
 spec:
   template:
     metadata:
       name: apache-pod
       labels:
-        app: httpd
+        app: apache
         env: prod
+        tier: frontend
+        owner: simbu
     spec:
       containers:
         - name: apache-container
           image: httpd:2.4
           ports:
-           - containerPort: 80
+          - name: http
+            containerPort: 80
+  replicas: 3
   selector:
     matchLabels:
-      app: httpd
+      app: apache
       env: prod
-  replicas: 2
+      tier: frontend
+      owner: simbu
+
     

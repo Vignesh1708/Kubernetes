@@ -1,7 +1,7 @@
-apiVersion: v1
-kind: ReplicationController
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: apache-rc
+  name: apache-deploy
   labels:
     app: apache
 spec:
@@ -21,3 +21,11 @@ spec:
           - name: http
             containerPort: 80
   replicas: 3
+  selector:
+    matchLabels:
+      app: apache
+      env: prod
+      tier: frontend
+      owner: simbu
+
+    
