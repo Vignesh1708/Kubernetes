@@ -1,0 +1,53 @@
+#kubectl port-forward cb-deploy-7b88599569-9tw9s 8091:8091
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cb-deploy
+  labels:
+    app: jboss-app
+spec:
+  template:
+    metadata:
+      name: cb-pod
+      labels:
+        app: jboss-app
+        env: prod
+        tier: db
+    spec:
+      containers:
+        - name: cb-container
+          image: 53555/couchbase:v1
+          ports:
+          - containerPort: 8091
+          - containerPort: 8092
+          - containerPort: 8093
+          - containerPort: 11210
+        
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jboss-app
+      env: prod
+      tier: db
+
+
+---
+
+apiVersion: v1
+kind: Service
+metadata: 
+  name: couchbase-service
+spec: 
+  selector: 
+    app: jboss-app
+    env: prod
+    tier: db
+  ports:
+    - name: admin
+      port: 8091
+    - name: views
+      port: 8092
+    - name: query
+      port: 8093
+    - name: memcached
+      port: 11210

@@ -87,7 +87,7 @@ systemctl restart kubelet
 
 # Initializing master node
 kubeadm init --pod-network-cidr=10.240.0.0/16
-
+kubeadm init --pod-network-cidr=10.10.0.0/16 --apiserver-advertise-address=192.168.56.2
 ---------------------------------------------------------------------
 
 # If you want to run kubectl as "regular" user. Then, execute below.

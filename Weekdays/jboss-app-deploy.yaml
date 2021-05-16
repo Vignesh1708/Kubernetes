@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jboss-deploy
+  labels:
+    app: jboss
+spec:
+  template:
+    metadata:
+      name: jboss-pod
+      labels:
+        app: jboss
+        env: prod
+        tier: frontend
+        owner: simbu
+    spec:
+      containers:
+        - name: jboss-container
+          image: 53555/jboss-app:v1
+          ports:
+          - name: http
+            containerPort: 8080
+          env:
+            - name: "COUCHBASE_SERVICE_SERVICE_HOST"
+              value: "couchbase-service"
+  replicas: 2
+  selector:
+    matchLabels:
+      app: jboss
+      env: prod
+      tier: frontend
+      owner: simbu
+
+---
+
+apiVersion: v1
+kind: Service
+metadata: 
+  name: jboss-app-service
+  annotations:
+      kubernetes.io/ingress.class: alb
+spec: 
+  type: LoadBalancer
+  selector: 
+    app: jboss
+    env: prod
+    tier: frontend
+    owner: simbu
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8080
+
+    

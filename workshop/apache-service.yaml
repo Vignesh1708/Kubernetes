@@ -5,13 +5,12 @@ metadata:
   labels:
     app: apache
 spec:
+  type: NodePort
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 30010
   selector:
     app: apache
     env: prod
     tier: frontend
-    owner: simbu
-  type: NodePort
-  ports:
-    - nodePort: 30050
-      port: 80
-      targetPort: 80
