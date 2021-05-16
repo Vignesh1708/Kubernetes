@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp-deployment1
+spec:
+  replicas: 4
+  strategy:
+    type: Recreate #RollingUpdate
+  selector:
+    matchLabels:
+      app: webapp-podv1
+  template:
+    metadata:
+      labels:
+        app: webapp-podv1
+    spec:
+      containers:
+      - name: webapp
+        image: arungupta/wildfly-app:2
+        ports:
+        - containerPort: 8080
