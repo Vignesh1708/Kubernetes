@@ -14,7 +14,7 @@ metadata:
   namespace: mongodb
 spec:
   type: ExternalName
-  externalName: mongo1.prodops-fico.com
+  externalName: mongo1.eks.com
 
 ---
 
@@ -25,7 +25,7 @@ metadata:
   namespace: mongodb
 spec:
   type: ExternalName
-  externalName: mongo2.prodops-fico.com
+  externalName: mongo2.eks.com
 ---
 
 kind: Service
@@ -35,4 +35,4 @@ metadata:
   namespace: mongodb
 spec:
   type: ExternalName
-  externalName: mongo3.prodops-fico.com
+  externalName: mongo3.eks.com
