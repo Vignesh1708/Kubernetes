@@ -1,0 +1,38 @@
+
+---
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: mongodb
+  labels:
+    name: mongodb
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: "mongo-1"
+  namespace: mongodb
+spec:
+  type: ExternalName
+  externalName: mongo1.prodops-fico.com
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: "mongo-2"
+  namespace: mongodb
+spec:
+  type: ExternalName
+  externalName: mongo2.prodops-fico.com
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: "mongo-3"
+  namespace: mongodb
+spec:
+  type: ExternalName
+  externalName: mongo3.prodops-fico.com
