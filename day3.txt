@@ -1,4 +1,6 @@
-RBAC:
+Authentication and Authorization:
+  User: 
+  RBAC:
 	1. Roles
 	2. Role Binding
 	3. Cluster Roles
@@ -7,6 +9,8 @@ RBAC:
 ConfigMaps and Secrets:
 	1. ConfigMap
 	2. Secret
+HealthCheck:
+	Liveness, Readiness probes
 
 Ingress Controller:
 	
